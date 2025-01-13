@@ -5,16 +5,18 @@ title=[]
 temp_title=str
 title_count=0
 stop_word=""
-stop_word2="none"
+stop_word2="стоп"
 #цикл для ввода названий заголовков со стоп словом none  и пустым значением(энтер)
 while temp_title !=stop_word and temp_title!=stop_word2:
    temp_title=input("введите название заметки"+str(title_count+1)+' если вы ввели все названия нажмите enter или введите"none"')
+   #проверка повтора названия
    if temp_title in title:
        title_count -= 1
        print ("такое название уже существует")
    else: title.append(temp_title)
   # print(temp_title)
    title_count+=1
+#удаление лишнего пустого значения
 title.pop(-1)
 title_count=len(title)
 #print(title_count)
@@ -34,7 +36,8 @@ while content_count!=title_count:
 
 print("имя:"+username)
 print_count=0
-# цикл для вывода всей информации(имя заметки, описание заметки, статус заметки, дата созданий, дата окончания) по очереди в зависимости от колва названий заметки
+# цикл для вывода всей информации(имя заметки, описание заметки, статус заметки, дата созданий, дата окончания)
+# по очереди в зависимости от колва названий заметки
 while print_count!=title_count:
     print("название заметки" +str(print_count+1)+":"+ title[print_count])
     print("описание заметки" +str(print_count+1)+":" +content[print_count])
@@ -42,5 +45,11 @@ while print_count!=title_count:
     print("дата создания заметки" +str(print_count+1)+":"+ created_date[print_count])
     print("дата окончания заметки" +str(print_count+1)+":"+ issue_date[print_count])
     print_count += 1
+#или метод ниже для вывода той же информации в строку
+#for i in title:
 
+#    print("имя:"+username+"; название заметки:"+title[print_count]+"; описание заметки:"+content[print_count]+
+ #         "; статус заметки:"+ status[print_count]+"; дата создания заметки:"+ created_date[print_count]+
+#          "; дата окончания заметки:"+issue_date[print_count])
+ #   print_count+=1
 
