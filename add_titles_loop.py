@@ -1,3 +1,5 @@
+from os import remove
+
 username=input("введите ваше имя")
 title=[]
 temp_title=str
@@ -6,15 +8,17 @@ stop_word=""
 stop_word2="none"
 #цикл для ввода названий заголовков со стоп словом none  и пустым значением(энтер)
 while temp_title !=stop_word and temp_title!=stop_word2:
-   temp_title=input("введите название заметки"+str(title_count+1))
+   temp_title=input("введите название заметки"+str(title_count+1)+' если вы ввели все названия нажмите enter или введите"none"')
    if temp_title in title:
        title_count -= 1
        print ("такое название уже существует")
    else: title.append(temp_title)
   # print(temp_title)
    title_count+=1
+title.pop(-1)
 title_count=len(title)
 #print(title_count)
+#print (title)
 content_count=0
 content=[]
 status=[]
