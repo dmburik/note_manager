@@ -1,30 +1,19 @@
+
 username=input("введите ваше имя")
-title=[]
-title.append(input("введите название заметки"))
-title.append(input("введите название заметки2"))
-title.append(input("введите название заметки3"))
-title_count=len(title)
-print(title_count)
-content_count=0
-content=[]
-status=[]
-created_date=[]
-issue_date=[]
-while content_count!=title_count:
-    content_count +=1
-    content.append(input("введите описание заметки"+str(content_count)))
-    status.append(input("введите статус заметки" + str(content_count)))
-    created_date.append(input("введите дату создания заметки"+str(content_count)+" в формате 00.00.0000"))
-    issue_date.append(input("введите дату предполагаемого окончания заметки"+str(content_count)+" в формате 00.00.0000"))
+title=input("введите название заметки")
+content=input("введите описание заметки")
+status=input("введите статус заметки")
+created_date=input("введите дату создания заметки в формате 00.00.0000")
+issue_date=input("введите дату предполагаемого окончания заметки в формате 00.00.0000")
+title_title = [input("введите название заголовка1"), input("введите название заголовка2"),
+               input("введите название заголовка3")]
+temp_created_date=created_date[0:5]
+temp_issue_date=issue_date[0:5]
 
-print("имя:"+username)
-print_count=0
-while print_count!=title_count:
-    print("название заметки: " + title[print_count])
-    print("описание заметки:" + content[print_count])
-    print("статус заметки:" + status[print_count])
-    print("дата создания заметки:" + created_date[print_count])
-    print("дата окончания заметки:" + issue_date[print_count])
-    print_count += 1
-
-
+print ("имя пользователя: "+username)
+print("имя заметки: "+title)
+print("краткое описание заметки: "+status)
+print(created_date[0:5])
+print(issue_date[0:5])
+print("название заголовков:  ")
+print(title_title)
