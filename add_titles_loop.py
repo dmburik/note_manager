@@ -30,7 +30,17 @@ issue_date=[]
 while content_count!=title_count:
     content_count +=1
     content.append(  input("введите описание заметки"+str(content_count)))
-    status.append(input("введите статус заметки" + str(content_count)))
+    temp_status=input("введите статус заметки " + str(content_count)+" готова/готовится/отложена")
+    #цикл для проверки статуса и дальнейшее его преобразование в читаемый формат
+    while temp_status not in ("готова","готовится","отложена","1","2","3"):
+        temp_status = input("статус может быть готова/готовится/отложена или числа 1/2/3 соответственно")
+    if temp_status =="1":
+        temp_status="готова"
+    elif temp_status =="2":
+        temp_status="готовится"
+    elif temp_status == "3":
+        temp_status = "отложена"
+    status.append(temp_status)
     created_date.append(  input("введите дату создания заметки"+str(content_count)+" в формате 00.00.0000"))
     issue_date.append( input("введите дату предполагаемого окончания заметки"+str(content_count)+" в формате 00.00.0000"))
 
