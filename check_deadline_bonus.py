@@ -26,56 +26,53 @@ nov=("nov","november","ноя","нояб","ноябрь","ноября")
 dec=("dec","december","дек","декабрь","декабря")
 month=[jan,feb,mar,apr,may,jun,jul,aug,sep,octo,nov,dec]
 
-def check_month_and_days:
+def check_month_and_days():
     check_lenth_date=check_issue_date
-    if
-        for i in range  ( 0 ,len(check_lenth_date)-1):
-            sepa = [' ', ',', '.', '/', '-', ';', ':']
-            if check_lenth_date[i] in sepa:
-                first_sep=i
-                break
-            else:
-                i+=1
-
-
-        for l in range (first_sep+1,len(check_lenth_date)-1):
-            sepa = [' ', ',', '.', '/', '-', ';', ':']
-            if check_lenth_date[l] in sepa:
-                second_sep=l
-                break
-            else:
-                l+=1
-
-        if    first_sep ==1:
-            while not check_lenth_date[0].isdigit():
-                print("в дате могут быть только'1' и цифры")
-                check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
-            day_count="0"+check_lenth_date[0]
-        elif     first_sep==2:
-            while not check_lenth_date[0:1].isdigit():
-                print("в дате могут быть только'2' и цифры")
-                check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
-            day_count=check_lenth_date[0]+check_lenth_date[1]
+    #if
+    for i in range  ( 0 ,len(check_lenth_date)-1):
+        sepa = [' ', ',', '.', '/', '-', ';', ':']
+        if check_lenth_date[i] in sepa:
+            first_sep=i
+            break
         else:
-            print("не корректо задана дата" )
-        print(day_count)
-        if second_sep == 3 and first_sep == 1:
-            while not check_lenth_date[2].isdigit():
-                print("в дате могут быть только'3' и цифры")
-                check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
-            month_count = "0" + check_lenth_date[2]
-        elif second_sep == 4 and first_sep == 1:
-            while not check_lenth_date[2:3].isdigit():
-                print("в дате могут быть только'4' и цифры")
-                check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
-            month_count = check_lenth_date[2]+check_lenth_date[3]
-        elif second_sep == 4 and first_sep == 2 :
-            while not check_lenth_date[3].isdigit():
-                print("в дате могут быть только'6' и цифры")
-                check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
-            month_count = "0"+ check_lenth_date[3]
-        elif second_sep == 5 and first_sep == 2 :
-            while not check_lenth_date[3:4].isdigit():
+            i+=1
+    for l in range (first_sep+1,len(check_lenth_date)-1):
+        sepa = [' ', ',', '.', '/', '-', ';', ':']
+        if check_lenth_date[l] in sepa:
+            second_sep=l
+            break
+        else:
+            l+=1
+    if    first_sep ==1:
+        while not check_lenth_date[0].isdigit():
+            print("в дате могут быть только'1' и цифры")
+            check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
+        day_count="0"+check_lenth_date[0]
+    elif     first_sep==2:
+        while not check_lenth_date[0:1].isdigit():
+            print("в дате могут быть только'2' и цифры")
+            check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
+        day_count=check_lenth_date[0]+check_lenth_date[1]
+    else:
+        print("не корректо задана дата" )
+    print(day_count)
+    if second_sep == 3 and first_sep == 1:
+        while not check_lenth_date[2].isdigit():
+            print("в дате могут быть только'3' и цифры")
+            check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
+        month_count = "0" + check_lenth_date[2]
+    elif second_sep == 4 and first_sep == 1:
+        while not check_lenth_date[2:3].isdigit():
+            print("в дате могут быть только'4' и цифры")
+            check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
+        month_count = check_lenth_date[2]+check_lenth_date[3]
+    elif second_sep == 4 and first_sep == 2 :
+        while not check_lenth_date[3].isdigit():
+            print("в дате могут быть только'6' и цифры")
+            check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
+        month_count = "0"+ check_lenth_date[3]
+    elif second_sep == 5 and first_sep == 2 :
+        while not check_lenth_date[3:4].isdigit():
 # данная проверка не нужна при отсутствии названий месяцев в 2 и менее символов
  #          for l in range(0, 12):
   #             if check_lenth_date[first_sep + 1: second_sep] in month[l][0:10]:
@@ -86,22 +83,21 @@ def check_month_and_days:
       #             l+=1
      #              if l==13:
     # при наличии названий в 2 символа следующие 2 строки уходят в блок else
-                print("в дате могут быть только'7' и цифры")
-                check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
-            month_count = check_lenth_date [3]+check_lenth_date[4]
-        else:
-            for l in range(0,12):
-                if check_lenth_date[first_sep+1 : second_sep] in month[l][0:10]:
-                    month_count="0"+str(l+1)
-                    print(month_count)
-                    break
-
-                else:
-                    l+=1
-                    if l ==12:
-                        print("не правильный формат даты")
-                        print(check_lenth_date[first_sep+1:second_sep])
-        return day_count,month_count,check_lenth_date
+            print("в дате могут быть только'7' и цифры")
+            check_lenth_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
+        month_count = check_lenth_date [3]+check_lenth_date[4]
+    else:
+        for l in range(0,12):
+            if check_lenth_date[first_sep+1 : second_sep] in month[l][0:10]:
+                month_count="0"+str(l+1)
+                print(month_count)
+                break
+            else:
+                l+=1
+                if l ==12:
+                    print("не правильный формат даты")
+                    print(check_lenth_date[first_sep+1:second_sep])
+    return day_count,month_count,check_lenth_date
 
 def check_year():
     check_year_date=check_issue_date
