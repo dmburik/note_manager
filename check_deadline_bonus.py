@@ -183,10 +183,10 @@ def check_year():
     return year_check2
 check_month_and_days()
 inp_day,inp_month,inp_date=check_month_and_days()
-while inp_date!=check_issue_date:
-    check_month_and_days()
-    inp_day,inp_month,inp_date=check_month_and_days()
-    check_year()
+ #while inp_date!=check_issue_date:
+  #  check_month_and_days()
+  #  inp_day,inp_month,inp_date=check_month_and_days()
+  #  check_year()
 
 inp_year=check_year()
 def check_days():
