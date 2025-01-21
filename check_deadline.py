@@ -1,12 +1,11 @@
-from datetime import date, datetime
-
+from datetime import date
 # вывод даты в обратной последовательности(День - Месяц - Год)
 current_date=date.today()
 date_for_print=current_date.strftime('%d-%m-%Y')
 print ("Текущая дата : "+ date_for_print)
 # запрос даты от пользователя с дальнейшей конвертацией
 check_issue_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
-#конвертация полученной даты в формат date и запрос даты в случае не правильной даты
+# конвертация полученной даты в формат date и запрос даты в случае не правильной даты
 issue_date=0
 while issue_date==0:
     try:
@@ -14,7 +13,7 @@ while issue_date==0:
     except ValueError:
         print("не корректный формат даты / не существующая дата")
         check_issue_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
-#блок для определения написания день/дня/дней
+# блок для определения написания день/дня/дней
 time_left=issue_date - current_date
 string_time_left=str(time_left.days)
 symbols=len(string_time_left)
@@ -29,7 +28,7 @@ elif (string_time_left[symbols-1]=="2" or string_time_left[symbols-1]=="3" or st
     dni="дня"
 else:
     dni="дней"
-#вывод дэдлайн истек/до дэдлайна осталось
+# вывод дэдлайн истек/до дэдлайна осталось
 if int(string_time_left) > 0:
     print("до дэдлайна осталось " + string_time_left + " " + dni)
 else:
