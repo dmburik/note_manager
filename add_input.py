@@ -1,8 +1,12 @@
-
-
 username=input("введите ваше имя")
 title=input("введите название заметки")
 content=input("введите описание заметки")
 status=input("введите статус заметки")
 created_date=input("введите дату создания заметки в формате 00.00.0000")
 issue_date=input("введите дату предполагаемого окончания заметки в формате 00.00.0000")
+print("Имя: "+username)
+print("Название заметки: "+title)
+print("Описание: "+content)
+print("Статус заметки: "+status)
+print("Дата создания: "+created_date)
+print("Дата окончания: "+issue_date)
