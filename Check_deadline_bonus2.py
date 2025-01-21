@@ -226,13 +226,9 @@ while  days_count_checked==0 or month_count==0 or year_count==0:
     month_count,check_issue_date=check_month()
     year_count,check_issue_date=check_year()
     days_count_checked,check_issue_date=check_days_in_month()
-
-
-print(check_issue_date)
 time_left=date(int(year_count),int(month_count),int(days_count_checked)) - current_date
 string_time_left=str(time_left.days)
 symbols=len(string_time_left)
-print(string_time_left)
 if string_time_left[symbols-1]=='1':
     dni = "день"
 elif string_time_left[symbols-1]=='2' or string_time_left[symbols-1]=="3" or string_time_left[symbols-1]=="4":
@@ -248,4 +244,4 @@ if int(string_time_left) > 0:
     print("до дэдлайна осталось " + string_time_left + " " + dni)
 else:
     print("внимание! Дэдлайн истек "+string_time_left + " " + dni + " назад")
-print(time_left)
+
