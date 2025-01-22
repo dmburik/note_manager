@@ -1,4 +1,5 @@
 from datetime import date
+
 # вывод даты в обратной последовательности(День - Месяц - Год)
 current_date=date.today()
 date_for_print=current_date.strftime('%d-%m-%Y')
@@ -31,5 +32,7 @@ else:
 # вывод дэдлайн истек/до дэдлайна осталось
 if int(string_time_left) > 0:
     print("до дэдлайна осталось " + string_time_left + " " + dni)
+elif int(string_time_left) == 0:
+    print("дэдлайн сегодня!!!")
 else:
     print("внимание! Дэдлайн истек "+string_time_left + " " + dni + " назад")
