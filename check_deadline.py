@@ -12,8 +12,11 @@ while issue_date==0:
     try:
         issue_date=date(int(check_issue_date[6:11]),int(check_issue_date[3:5]),int(check_issue_date[0:2]))
     except ValueError:
-        print("не корректный формат даты / не существующая дата")
-        check_issue_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
+        try:
+            issue_date=date(int(check_issue_date[0:4]),int(check_issue_date[5:7]),int(check_issue_date[8:10]))
+        except ValueError:
+            print("не корректный формат даты / не существующая дата")
+            check_issue_date = input("введите дату дэдлайна в формате ДД-ММ-ГГГГ")
 # блок для определения написания день/дня/дней
 time_left=issue_date - current_date
 string_time_left=str(time_left.days)
